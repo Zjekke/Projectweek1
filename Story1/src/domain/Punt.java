@@ -10,14 +10,14 @@ public class Punt {
 
     private void setX(int x){
         if(x < 0){
-            throw new IllegalArgumentException("Foute X");
+            throw new NumberFormatException("Foute X");
         }
         this.x = x;
     }
 
     private void setY(int y){
         if(y < 0){
-            throw new IllegalArgumentException("Foute Y");
+            throw new NumberFormatException("Foute Y");
         }
         this.y = y;
     }
