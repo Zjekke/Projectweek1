@@ -17,7 +17,7 @@ public class Punt {
 
     private void setY(int y){
         if(y < 0){
-            throw new DomainException("Foute Y");
+            throw new IllegalArgumentException("Foute Y");
         }
         this.y = y;
     }
