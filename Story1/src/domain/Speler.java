@@ -1,6 +1,9 @@
 package domain;
 
 public class Speler {
-}
+    String naam;
 
-// SpelerClass
+    public Speler(String naam){
+        this.naam = naam;
+    }
+}
