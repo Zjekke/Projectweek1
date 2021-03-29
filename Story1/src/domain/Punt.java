@@ -1,4 +1,4 @@
-package Story1.src.domain;
+package domain;
 
 public class Punt {
     int x,y;
@@ -17,7 +17,7 @@ public class Punt {
 
     private void setY(int y){
         if(y < 0){
-            throw new IllegalArgumentException("Foute Y");
+            throw new DomainException("Foute Y");
         }
         this.y = y;
     }
@@ -28,5 +28,9 @@ public class Punt {
 
     public int getY(){
         return this.y;
+    }
+
+    public String toString(){
+        return "(" + this.x + ", " + this.y +")";
     }
 }
