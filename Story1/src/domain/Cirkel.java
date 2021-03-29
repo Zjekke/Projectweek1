@@ -1,5 +1,7 @@
 package Story1.src.domain;
 
+import domain.Punt;
+
 public class Cirkel {
 
 
@@ -7,7 +9,13 @@ public class Cirkel {
     private int straal;
 
     public Cirkel(Punt middelPunt, int straal) {
+        if (middelPunt == null) {
+            throw new IllegalArgumentException("middelpunt is verplicht");
+        }
         this.middelPunt = middelPunt;
+        if (straal == 0 || straal < 0) {
+            throw new IllegalArgumentException("straal moet groter zijn dan 0");
+        }
         this.straal = straal;
     }
 

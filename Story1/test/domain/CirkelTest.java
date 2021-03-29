@@ -1,7 +1,7 @@
 package Story1.test.domain;
 
 import Story1.src.domain.Cirkel;
-import Story1.src.domain.Punt;
+import domain.Punt;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
@@ -21,21 +21,21 @@ public class CirkelTest {
     }
 
     
-    @Test(expected =IllegalArgumentException.class)
+    @Test
     public void cirkel_met_geldig_middelpunt_en_straal(){
         Cirkel cirkel = new Cirkel(geldigpunt, geldigestraal);
     }
     @Test(expected =IllegalArgumentException.class)
     public void cirkel_met_middelpunt_null_gooit_exception() throws Exception{
-        geldigpunt = null;
-        Cirkel cirkel = new Cirkel(geldigpunt, geldigestraal);
+        Punt punt3 = null;
+        Cirkel cirkel = new Cirkel(punt3, geldigestraal);
     }
     @Test(expected =IllegalArgumentException.class)
     public void cirkel_met_straal_kleiner_dan_nul_gooit_exception() throws Exception{
         new Cirkel(geldigpunt, -3);
     }
     @Test(expected =IllegalArgumentException.class)
-    public void cirkel_met_straal_gelijk_aan_nul_gooit_exception() throws Exception{
+    public void cirkel_met_straal_gelijk_aan_nul_gooit_exception() {
         new Cirkel(geldigpunt, 0);
     }
 
@@ -53,7 +53,7 @@ public class CirkelTest {
         Punt punt1 = new Punt(2,2);
         Punt punt2 = geldigpunt;
         Cirkel cirkel1 = new Cirkel(punt1, 6);
-        Cirkel cirkel2 = new Cirkel(punt1, 6);
+        Cirkel cirkel2 = new Cirkel(punt2, 6);
         Assert.assertFalse(cirkel1.isZelfde(cirkel2));
     }
 
