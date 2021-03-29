@@ -1,4 +1,4 @@
-package domain;
+package Story1.src.domain;
 
 public class Punt {
     int x,y;

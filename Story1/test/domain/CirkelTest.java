@@ -1,10 +1,13 @@
-package domain;
+package Story1.test.domain;
 
+import Story1.src.domain.Cirkel;
+import Story1.src.domain.Punt;
 import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CirkelTest extends TestCase {
+public class CirkelTest {
     private Punt geldigpunt;
     private int geldigestraal;
     private Cirkel cirkel;
@@ -35,22 +38,31 @@ public class CirkelTest extends TestCase {
     public void cirkel_met_straal_gelijk_aan_nul_gooit_exception() throws Exception{
         new Cirkel(geldigpunt, 0);
     }
-    @
+
     @Test
     public void gelijke_cirkels_geeft_true(){
-        assertTrue(cirkel.isZelfde(new Cirkel(geldigpunt, geldigestraal)));
+        Assert.assertTrue(cirkel.isZelfde(new Cirkel(geldigpunt, geldigestraal)));
     }
-    @Test
-    public void gelijke_cirkels_geeft_true(){
-        assertTrue(cirkel.isZelfde(new Cirkel(geldigpunt, geldigestraal + 1)));
-    }
+
     @Test
     public void tweedecirkel_met_null_geeft_false(){
-        assertFalse(cirkel.isZelfde(null));
+        Assert.assertFalse(cirkel.isZelfde(null));
     }
     @Test
     public void cirkel_is_verschillend_met_verschillend_middelpunt(){
-        assertFalse();
+        Punt punt1 = new Punt(2,2);
+        Punt punt2 = geldigpunt;
+        Cirkel cirkel1 = new Cirkel(punt1, 6);
+        Cirkel cirkel2 = new Cirkel(punt1, 6);
+        Assert.assertFalse(cirkel1.isZelfde(cirkel2));
+    }
+
+    @Test
+    public void cirkel_is_verschillend_met_verschillend_straal(){
+        Punt punt = geldigpunt;
+        Cirkel cirkel1 = new Cirkel(punt, geldigestraal);
+        Cirkel cirkel2 = new Cirkel(punt, geldigestraal + 1);
+        Assert.assertFalse(cirkel1.isZelfde(cirkel2));
     }
 }
 
