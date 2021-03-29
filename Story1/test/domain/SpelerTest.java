@@ -1,7 +1,8 @@
-package domain;
+package Story1.test.domain;
 
 import static org.junit.Assert.*;
 
+import domain.DomainException;
 import org.junit.Before;
 import org.junit.Test;
 
