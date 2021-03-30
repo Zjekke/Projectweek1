@@ -1,6 +1,6 @@
 package domain;
 
-public class LijnStuk {
+public class LijnStuk extends Vorm {
     private Punt startPunt;
     private Punt eindPunt;
 
@@ -17,7 +17,7 @@ public class LijnStuk {
     }
 
     private Punt setStartPunt(Punt punt) {
-        if(punt == null || punt.equals(eindPunt)){
+        if(punt == null || punt.equals(this.eindPunt)){
             throw new DomainException("Fout punt");
         }
         return punt;

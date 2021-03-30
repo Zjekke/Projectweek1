@@ -3,6 +3,7 @@ package ui;
 
 import domain.Punt;
 import domain.Rechthoek;
+import domain.Tekening;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -19,7 +20,7 @@ public class RechthoekApp {
     private Punt punt;
     private Rechthoek rechthoek;
 
-    public RechthoekApp(GridPane root) {
+    public RechthoekApp(GridPane root, Tekening tekening) {
         invoerXLabel =  new javafx.scene.control.Label("Geef de x-coördinaat van de linkerbovenhoek ");
         invoerX= new javafx.scene.control.TextField();
         invoerYLabel = new javafx.scene.control.Label("Geef de y-coördinaat van de linkerbovenhoek ");
@@ -84,7 +85,7 @@ public class RechthoekApp {
                 punt = new Punt(Integer.parseInt(invoerX.getText()), Integer.parseInt(invoerY.getText()));
                 root.getChildren().clear();
 
-                rechthoek = new Rechthoek(Integer.parseInt(invoerHoogte.getText()), Integer.parseInt(invoerBreedte.getText()), punt);
+                rechthoek = new Rechthoek(punt, Integer.parseInt(invoerHoogte.getText()), Integer.parseInt(invoerBreedte.getText()));
                 root.getChildren().clear();
 
                 Text uitvoer = new Text();

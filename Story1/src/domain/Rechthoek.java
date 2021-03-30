@@ -1,11 +1,11 @@
 package domain;
 
-public class Rechthoek {
+public class Rechthoek extends Vorm {
     private int hoogte;
     private int breedte;
     private Punt linkerBovenhoek;
 
-    public Rechthoek(int hoogte, int breedte, Punt linkerBovenhoek) {
+    public Rechthoek(Punt linkerBovenhoek, int hoogte, int breedte) {
         this.hoogte = hoogte;
         this.breedte = breedte;
         this.linkerBovenhoek = linkerBovenhoek;
