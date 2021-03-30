@@ -15,7 +15,7 @@ public class Punt extends Vorm {
     }
 
     public boolean equals(Punt anderPunt){
-        if(this.x == anderPunt.x && this.y == anderPunt.y){
+        if(this.x == anderPunt.getX() && this.y == anderPunt.getY()){
             return true;
         }
         return false;
