@@ -9,7 +9,7 @@ import javafx.scene.text.Text;
 public class SpelerApp {
     private Label invoerNaamLabel;
     private TextField invoerNaamVeld;
-    private Speler speler ;
+    private Speler speler;
 
     private  Alert foutenboodschap = new Alert(Alert.AlertType.WARNING);
 

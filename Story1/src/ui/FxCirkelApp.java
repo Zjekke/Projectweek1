@@ -13,7 +13,7 @@ public class FxCirkelApp extends Application {
         GridPane pane = new GridPane();
         Scene scene = new Scene(pane, 350, 150);
 
-        new CirkelApp();
+        new CirkelApp(pane);
 
         stage.setScene(scene);
         stage.setTitle("Cirkel App");
