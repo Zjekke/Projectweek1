@@ -24,6 +24,10 @@ public class Driehoek {
         return this == anderDriehoek;
     }
 
+    public String toString(){
+        return "(" + this.punt1 + ", " + this.punt2 + ", " + this.punt3 + ")";
+    }
+
     public Punt getHoekPunt1(){
         return this.punt1;
     }
