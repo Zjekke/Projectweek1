@@ -1,6 +1,6 @@
-package Story1.test.domain;
+package domain;
 
-import Story1.src.domain.Cirkel;
+import domain.Cirkel;
 import domain.Punt;
 import junit.framework.TestCase;
 import org.junit.Assert;

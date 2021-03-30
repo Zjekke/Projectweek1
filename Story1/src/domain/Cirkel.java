@@ -1,4 +1,4 @@
-package Story1.src.domain;
+package domain;
 
 import domain.Punt;
 
