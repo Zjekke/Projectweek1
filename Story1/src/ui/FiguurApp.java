@@ -13,7 +13,7 @@ public class FiguurApp {
     private Tekening tekening;
 
     public FiguurApp(GridPane root) {
-        mogelijkeFiguren = FXCollections.observableArrayList("Cirkel","Rechthoek","Driehoek","Lijnstuk");
+        mogelijkeFiguren = FXCollections.observableArrayList("Cirkel","Rechthoek","Driehoek","Lijnstuk", "Tekening");
         keuzeMenu = new ComboBox(mogelijkeFiguren);
         root.add(keuzeMenu,0,0);
         keuzeMenu.setOnAction(eventKeuze -> {
@@ -28,6 +28,8 @@ public class FiguurApp {
                             new DriehoekApp(root, tekening);
                         } else if (keuzeMenu.getValue().equals("Lijnstuk")) {
                             new LijnstukApp(root, tekening);
+                        } else if (keuzeMenu.getValue().equals("Tekening")) {
+                            new TekeningApp(root);
                         }
                     }
 		});
