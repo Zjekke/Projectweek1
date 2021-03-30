@@ -24,6 +24,9 @@ public class LijnStuk extends Vorm {
     }
 
     public boolean equals(LijnStuk lijn){
+        if(lijn == null){
+            return false;
+        }
         if(lijn.startPunt.equals(this.startPunt) && lijn.eindPunt.equals((this.eindPunt))){
             return true;
         }

@@ -16,7 +16,7 @@ public class Tekening {
         if(isValidNaam(naam)){
             return naam;
         }
-        throw new DomainException("Foute naam");
+        throw new IllegalArgumentException("Foute naam");
     }
 
     public int getAantalVormen(){
@@ -45,7 +45,12 @@ public class Tekening {
         if(tekening == null){
             return false;
         }
-        if(this.vormen.size() == tekening.vormen.size() && this.vormen.equals(tekening.vormen)){
+        for(Vorm v : this.vormen){
+            if(!tekening.vormen.contains(v)){
+                return false;
+            }
+        }
+        if(this.vormen.size() == tekening.vormen.size()){
             return true;
         }
         return false;
