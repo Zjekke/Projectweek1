@@ -51,8 +51,8 @@ public class RechthoekApp {
         invoerY.setOnAction(eventIngaveY ->{
             try {
                 Integer.parseInt(invoerY.getText());
-                root.add(invoerBreedteLabel, 0, 1);
-                root.add(invoerBreedte, 1, 1);
+                root.add(invoerBreedteLabel, 0, 2);
+                root.add(invoerBreedte, 1, 2);
 
             }
             catch(NumberFormatException e){
@@ -66,8 +66,8 @@ public class RechthoekApp {
         invoerBreedte.setOnAction(eventIngaveBreedte ->{
             try {
                 Integer.parseInt(invoerBreedte.getText());
-                root.add(invoerHoogteLabel, 0, 1);
-                root.add(invoerHoogte, 1, 1);
+                root.add(invoerHoogteLabel, 0, 3);
+                root.add(invoerHoogte, 1, 3);
 
             }
             catch(NumberFormatException e){
