@@ -37,6 +37,10 @@ public class Rechthoek extends Vorm {
         this.hoogte = hoogte;
     }
 
+    public Omhullende getOmhullende(){
+        return new Omhullende(this.linkerBovenhoek, this.breedte, this.hoogte);
+    }
+
     private void setBreedte(int breedte){
         if(breedte <= 0){
             throw new DomainException("Foute breedte");
