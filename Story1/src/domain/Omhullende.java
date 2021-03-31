@@ -1,6 +1,6 @@
 package domain;
 
-public class Omhullende {
+public class Omhullende extends Vorm {
     private int breedte, hoogte;
     private Punt positieLinksBoven;
 
