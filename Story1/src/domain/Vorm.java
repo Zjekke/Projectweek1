@@ -3,7 +3,7 @@ package domain;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Vorm {
+public abstract class Vorm implements Drawable {
     private Color kleur;
 
     public Color getKleur() {
@@ -13,11 +13,8 @@ public class Vorm {
     public void setKleur(Color kleur) {
         this.kleur = kleur;
     }
-    /*
-    public Omhullende getOmhullende() {
-        return Omhullende;
-    }
-    */
+
+    public abstract Omhullende getOmhullende() throws DomainException;
 
     public String toString(){
         return "(" + this.kleur + ")";

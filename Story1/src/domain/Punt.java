@@ -1,6 +1,6 @@
 package domain;
 
-public class Punt extends Vorm {
+public class Punt {
     private int x,y;
 
     public Punt(int x, int y){

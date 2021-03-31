@@ -58,4 +58,9 @@ public class Rechthoek extends Vorm {
     public String toString() {
         return "Rechthoek: ( linkerbovenhoek: " + this.linkerBovenhoek.toString() + ", breedte: " + this.breedte + ", hoogte: " + this.hoogte+ " )";
     }
+
+    @Override
+    public void teken(Tekening tekening) {
+
+    }
 }

@@ -2,6 +2,8 @@ package domain;
 
 import domain.Punt;
 
+import java.awt.*;
+
 public class Cirkel extends Vorm {
 
 
@@ -43,7 +45,17 @@ public class Cirkel extends Vorm {
         return this.middelPunt.equals(c.middelPunt) && this.straal == c.straal;
     }
 
+    @Override
+    public Omhullende getOmhullende() throws DomainException {
+        return null;
+    }
+
     public String toString() {
         return "Cirkel: ( Middelpunt: " + this.middelPunt.toString() + ", straal: " + this.straal + " )";
+    }
+
+    @Override
+    public void teken(Tekening tekening) {
+
     }
 }

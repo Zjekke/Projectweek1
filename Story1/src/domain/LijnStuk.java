@@ -34,10 +34,20 @@ public class LijnStuk extends Vorm {
     }
 
     @Override
+    public Omhullende getOmhullende() throws DomainException {
+        return null;
+    }
+
+    @Override
     public String toString() {
         return "LijnStuk{" +
                 "startPunt=" + startPunt +
                 ", eindPunt=" + eindPunt +
                 '}';
+    }
+
+    @Override
+    public void teken(Tekening tekening) {
+
     }
 }

@@ -28,10 +28,7 @@ public class Omhullende extends Vorm {
         if(omhullende == null){
             return false;
         }
-        if(this.positieLinksBoven.equals(omhullende.positieLinksBoven) && this.hoogte == omhullende.hoogte && this.breedte == omhullende.breedte){
-            return true;
-        }
-        return false;
+        return this.positieLinksBoven.equals(omhullende.positieLinksBoven) && this.hoogte == omhullende.hoogte && this.breedte == omhullende.breedte;
     }
 
     public int getMinimumX(){
@@ -60,5 +57,15 @@ public class Omhullende extends Vorm {
 
     public int getBreedte(){
         return this.breedte;
+    }
+
+    @Override
+    public Omhullende getOmhullende() throws DomainException {
+        return null;
+    }
+
+    @Override
+    public void teken(Tekening tekening) {
+
     }
 }

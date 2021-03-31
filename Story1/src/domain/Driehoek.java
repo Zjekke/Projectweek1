@@ -24,6 +24,11 @@ public class Driehoek extends Vorm {
         return this == anderDriehoek;
     }
 
+    @Override
+    public Omhullende getOmhullende() throws DomainException {
+        return null;
+    }
+
     public String toString(){
         return "(" + this.punt1 + ", " + this.punt2 + ", " + this.punt3 + ")";
     }
@@ -36,5 +41,10 @@ public class Driehoek extends Vorm {
     }
     public Punt getHoekPunt3(){
         return this.punt3;
+    }
+
+    @Override
+    public void teken(Tekening tekening) {
+
     }
 }
