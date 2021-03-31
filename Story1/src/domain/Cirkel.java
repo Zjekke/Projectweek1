@@ -9,6 +9,7 @@ public class Cirkel extends Vorm {
 
     private Punt middelPunt;
     private int straal;
+    private Omhullende o;
 
     public Cirkel(Punt middelPunt, int straal) {
         if (middelPunt == null) {
@@ -47,7 +48,10 @@ public class Cirkel extends Vorm {
 
     @Override
     public Omhullende getOmhullende() throws DomainException {
-        return null;
+        int diagonaal = this.getStraal() *2;
+        Punt punt = new Punt(this.middelPunt.getX() - this.getStraal(), this.middelPunt.getY() - this.getStraal());
+        o = new Omhullende(punt, diagonaal, diagonaal);
+        return new Omhullende(punt, diagonaal, diagonaal);
     }
 
     public String toString() {

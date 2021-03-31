@@ -4,6 +4,8 @@ public class LijnStuk extends Vorm {
     private Punt startPunt;
     private Punt eindPunt;
 
+    private Omhullende o;
+
     public LijnStuk(Punt punt1, Punt punt2){
         setStartEnEindPunt(punt1, punt2);
     }
@@ -35,7 +37,12 @@ public class LijnStuk extends Vorm {
 
     @Override
     public Omhullende getOmhullende() throws DomainException {
-        return null;
+        int oHoogte = Math.abs(this.getEindPunt().getY() - this.getStartPunt().getY());
+        int oBreedte = Math.abs(this.getEindPunt().getX() - this.getStartPunt().getX());
+        int omhulX = Math.min(this.getEindPunt().getX(), this.getStartPunt().getX());
+        int omhulY = Math.min(this.getEindPunt().getY(), this.getStartPunt().getY());
+        o = new Omhullende(new Punt(omhulX,omhulY), oBreedte, oHoogte);
+        return new Omhullende(new Punt(omhulX,omhulY), oBreedte, oHoogte);
     }
 
     @Override

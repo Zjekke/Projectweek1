@@ -2,7 +2,7 @@ package domain;
 
 import java.util.ArrayList;
 
-public class Tekening {
+public class Tekening implements Drawable{
     private String naam;
     private ArrayList<Vorm> vormen;
     public int MIN_X, MAX_X, MIN_Y, MAX_Y;
@@ -74,5 +74,10 @@ public class Tekening {
 
     public String getNaam(){
         return this.naam;
+    }
+
+    @Override
+    public void teken(Tekening tekening) {
+
     }
 }

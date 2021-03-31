@@ -61,7 +61,7 @@ public class Omhullende extends Vorm {
 
     @Override
     public Omhullende getOmhullende() throws DomainException {
-        return null;
+        return new Omhullende(this.getLinkerBovenhoek(), this.getBreedte(), this.getHoogte());
     }
 
     @Override
