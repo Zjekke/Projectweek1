@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Tekening implements Drawable{
     private String naam;
     private ArrayList<Vorm> vormen;
-    public int MIN_X, MAX_X, MIN_Y, MAX_Y;
+    public static final int MIN_X = 0;public static final int MIN_Y = 0;
+    public static final int MAX_X = 399; public static final int MAX_Y = 399;
 
     public Tekening(String naam){
         vormen = new ArrayList<Vorm>();
@@ -24,7 +25,11 @@ public class Tekening implements Drawable{
     }
 
     public void voegToe(Vorm vorm){
-        this.vormen.add(vorm);
+        if(vorm.getOmhullende().getMaximumX() > MAX_X || vorm.getOmhullende().getMinimumX() < MIN_X || vorm.getOmhullende().getMaximumY() > MAX_Y || vorm.getOmhullende().getMinimumY() < MIN_Y){
+            throw new DomainException("Foute vorm grootte");
+        } else{
+            this.vormen.add(vorm);
+        }
     }
 
     public void verwijder(Vorm vorm){
