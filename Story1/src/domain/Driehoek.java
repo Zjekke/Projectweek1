@@ -28,7 +28,15 @@ public class Driehoek extends Vorm {
 
     @Override
     public Omhullende getOmhullende() throws DomainException {
-        return null;
+        int hoogsteY = Math.max(punt1.getY(),Math.max(punt2.getY(),punt3.getY()));
+        int laagsteY = Math.min(punt1.getY(),Math.min(punt2.getY(),punt3.getY()));
+        int linkseX = Math.min(punt1.getX(),Math.min(punt2.getX(),punt3.getX()));
+        int rechtseX = Math.max(punt1.getX(),Math.max(punt2.getX(),punt3.getX()));
+
+        int breedte = rechtseX - linkseX;
+        int hoogte = hoogsteY - laagsteY;
+
+        return new Omhullende(new Punt(linkseX,laagsteY),breedte,hoogte);
     }
 
     public String toString(){
