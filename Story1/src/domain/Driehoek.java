@@ -1,5 +1,7 @@
 package domain;
 
+import javafx.scene.layout.Pane;
+
 public class Driehoek extends Vorm {
     private Punt punt1, punt2, punt3;
 
@@ -44,7 +46,7 @@ public class Driehoek extends Vorm {
     }
 
     @Override
-    public void teken(Tekening tekening) {
+    public void teken(Pane root) {
 
     }
 }

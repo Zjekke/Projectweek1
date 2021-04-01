@@ -1,5 +1,7 @@
 package domain;
 
+import javafx.scene.layout.Pane;
+
 public class Rechthoek extends Vorm {
     private int hoogte;
     private int breedte;
@@ -60,7 +62,7 @@ public class Rechthoek extends Vorm {
     }
 
     @Override
-    public void teken(Tekening tekening) {
+    public void teken(Pane root) {
 
     }
 }

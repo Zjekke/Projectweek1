@@ -1,5 +1,7 @@
 package domain;
 
+import javafx.scene.layout.Pane;
+
 public class Omhullende extends Vorm {
     private int breedte, hoogte;
     private Punt positieLinksBoven;
@@ -65,7 +67,7 @@ public class Omhullende extends Vorm {
     }
 
     @Override
-    public void teken(Tekening tekening) {
+    public void teken(Pane root) {
 
     }
 }

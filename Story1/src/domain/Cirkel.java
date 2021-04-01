@@ -1,6 +1,7 @@
 package domain;
 
 import domain.Punt;
+import javafx.scene.layout.Pane;
 
 import java.awt.*;
 
@@ -59,7 +60,7 @@ public class Cirkel extends Vorm {
     }
 
     @Override
-    public void teken(Tekening tekening) {
+    public void teken(Pane root) {
 
     }
 }
