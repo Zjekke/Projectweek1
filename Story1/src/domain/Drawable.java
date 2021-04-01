@@ -1,5 +1,7 @@
 package domain;
 
+import javafx.scene.layout.Pane;
+
 public interface Drawable {
-    void teken(Tekening tekening);
+    void teken(Pane root);
 }

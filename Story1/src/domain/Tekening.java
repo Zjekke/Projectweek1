@@ -1,5 +1,7 @@
 package domain;
 
+import javafx.scene.layout.Pane;
+
 import java.util.ArrayList;
 
 public class Tekening implements Drawable{
@@ -82,7 +84,7 @@ public class Tekening implements Drawable{
     }
 
     @Override
-    public void teken(Tekening tekening) {
+    public void teken(Pane root) {
 
     }
 }

@@ -1,5 +1,7 @@
 package domain;
 
+import javafx.scene.layout.Pane;
+
 public class LijnStuk extends Vorm {
     private Punt startPunt;
     private Punt eindPunt;
@@ -54,7 +56,7 @@ public class LijnStuk extends Vorm {
     }
 
     @Override
-    public void teken(Tekening tekening) {
+    public void teken(Pane root) {
 
     }
 }
