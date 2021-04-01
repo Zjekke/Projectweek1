@@ -100,7 +100,11 @@ public class TekeningTest {
         huisMetSchouw.verwijder(schouwNietInTekening);
         assertTrue(huis.equals(huisMetSchouw));
     }
-
+    @Test (expected = NumberFormatException.class)
+    public void gooit_exception_wanneer_minX_kleiner_is_dan_MinX_tekening(){
+        Tekening tekening = new Tekening("naam");
+        tekening.voegToe(new Rechthoek(new Punt(-1,1),10,10));
+    }
 
     public Tekening createHuisMetSchouw() {
         Tekening huisMetSchouw = new Tekening("huisMetSchouw");
