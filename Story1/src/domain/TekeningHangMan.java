@@ -9,7 +9,7 @@ public class TekeningHangMan extends Tekening {
 
         afbeeldingHangMan();
 
-        this.aantalOnzichtbaar = this.getAantalVormen() - 4;
+        this.aantalOnzichtbaar = getAantalOnzichtbaar();
     }
 
     public void afbeeldingHangMan() throws DomainException{
@@ -53,10 +53,14 @@ public class TekeningHangMan extends Tekening {
 
     }
 
-
-
     public int getAantalOnzichtbaar(){
-        return this.aantalOnzichtbaar;
+        int teller = 0;
+        for(Vorm vorm : this.getLijst().getVormen()){
+            if(!vorm.isZichtbaar()){
+                teller++;
+            }
+        }
+        return teller;
     }
 
     public void zetVolgendeZichtbaar() throws DomainException{
