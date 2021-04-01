@@ -67,7 +67,7 @@ public class Rechthoek extends Vorm implements Drawable {
     public void teken(Pane root) {
 
         Rectangle rechthoek = new Rectangle(this.getLinkerBovenhoek().getX(), this.getLinkerBovenhoek().getY(), this.getBreedte(), this.getHoogte());
-        rechthoek.setFill(this.getKleur());
+        rechthoek.setFill(Color.BROWN);
         root.getChildren().add(rechthoek);
 
     }

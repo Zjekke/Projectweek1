@@ -21,7 +21,7 @@ public abstract class Vorm implements Drawable {
     }
 
     public Vorm() {
-        this.zichtbaar = true;
+        this.zichtbaar = false;
     }
 
     public void setZichtbaar(boolean zichtbaar) {

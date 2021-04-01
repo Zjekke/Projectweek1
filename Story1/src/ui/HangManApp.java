@@ -20,14 +20,14 @@ public class HangManApp {
     private TextField invoerLetter = new TextField("Welke letter?");
     private HangMan hangman ;
 
-    private TekenVenster tekening;
+    private TekenVensterApp tekening;
     private Pane pane = new Pane();
     private int aantal = 0;
 
 
     public HangManApp(VBox root, Speler speler, WoordenLijst woordenlijst) {
         this.hangman = new HangMan(speler, woordenlijst);
-        this.tekening = new TekenVenster(pane,this.hangman.getTekening());
+        this.tekening = new TekenVensterApp(pane,this.hangman.getTekening());
 
         hintwoordUitvoer.setText(this.hangman.getHint());
         hbox.setAlignment(Pos.BOTTOM_LEFT);
@@ -68,7 +68,7 @@ public class HangManApp {
                 hintwoordUitvoer.setText(this.hangman.getHint());
             }
             else {
-                this.tekening = new TekenVenster(pane,this.hangman.getTekening());
+                this.tekening = new TekenVensterApp(pane,this.hangman.getTekening());
             }
             invoerBox.setDisable(true);
         });

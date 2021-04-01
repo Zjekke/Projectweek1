@@ -69,7 +69,7 @@ public class Driehoek extends Vorm {
         }
 
         Polyline driehoek = new Polyline(hoekDoubles);
-        driehoek.setFill(this.getKleur());
+        driehoek.setFill(Color.GREEN);
         driehoek.setStroke(Color.BLACK);
 
         root.getChildren().add(driehoek);
