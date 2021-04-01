@@ -38,13 +38,12 @@ public class LijnStuk extends Vorm {
     }
 
     @Override
-    public Omhullende getOmhullende() throws DomainException {
-        int oHoogte = Math.abs(this.getEindPunt().getY() - this.getStartPunt().getY());
-        int oBreedte = Math.abs(this.getEindPunt().getX() - this.getStartPunt().getX());
-        int omhulX = Math.min(this.getEindPunt().getX(), this.getStartPunt().getX());
-        int omhulY = Math.min(this.getEindPunt().getY(), this.getStartPunt().getY());
-        o = new Omhullende(new Punt(omhulX,omhulY), oBreedte, oHoogte);
-        return new Omhullende(new Punt(omhulX,omhulY), oBreedte, oHoogte);
+    public Omhullende getOmhullende() {
+        int laagsteX = Math.min(startPunt.getX(),eindPunt.getX());
+        int hoogsteX = Math.max(startPunt.getX(),eindPunt.getX());
+        int laagsteY = Math.min(startPunt.getY(),eindPunt.getY());
+        int hoogsteY = Math.max(startPunt.getY(),eindPunt.getY());
+        return new Omhullende(new Punt(laagsteX, laagsteY), hoogsteX - laagsteX, hoogsteY - laagsteY);
     }
 
     @Override

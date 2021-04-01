@@ -99,12 +99,12 @@ public class OmhullendeTest {
     @Test
     public void minimum_y_is_juist(){
         Omhullende omhullende = new Omhullende(linkerBovenhoek,breedte,hoogte);
-        assertEquals(omhullende.getMinimumY(), linkerBovenhoek.getY() - hoogte);
+        assertEquals(omhullende.getMinimumY(), linkerBovenhoek.getY());
     }
 
     @Test
     public void maximum_y_is_juist(){
         Omhullende omhullende = new Omhullende(linkerBovenhoek,breedte,hoogte);
-        assertEquals(omhullende.getMaximumY(), linkerBovenhoek.getY());
+        assertEquals(omhullende.getMaximumY(), linkerBovenhoek.getY() + hoogte);
     }
 }

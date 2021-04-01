@@ -42,11 +42,11 @@ public class Omhullende extends Vorm {
     }
 
     public int getMinimumY(){
-        return this.positieLinksBoven.getY() - hoogte;
+        return this.positieLinksBoven.getY();
     }
 
     public int getMaximumY(){
-        return this.positieLinksBoven.getY();
+        return this.positieLinksBoven.getY() + hoogte;
     }
 
     public Punt getLinkerBovenhoek() {

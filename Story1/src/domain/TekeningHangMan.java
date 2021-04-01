@@ -1,10 +1,11 @@
 package domain;
 
-public class TekeningHangMan {
+public class TekeningHangMan extends Tekening {
 
     private Tekening lijst;
 
-    public TekeningHangMan() throws Exception{
+    public TekeningHangMan(String naam) throws Exception{
+        super(naam);
         lijst = new Tekening("Hangman");
         afbeeldingHangMan();
     }

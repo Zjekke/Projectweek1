@@ -15,7 +15,7 @@ public class FxTekenHangManApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         Pane root = new Pane();
         Scene scene = new Scene(root,400,400);
-        TekeningHangMan tekening = new TekeningHangMan();
+        TekeningHangMan tekening = new TekeningHangMan("tekening");
         primaryStage.setScene(scene);
         root.getChildren().add(maakVolgendeZichtbaarKnop);
 
