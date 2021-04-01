@@ -26,6 +26,10 @@ public class Tekening implements Drawable{
         return this.vormen.size();
     }
 
+    public ArrayList<Vorm> getVormen() {
+        return vormen;
+    }
+
     public void voegToe(Vorm vorm){
         if(vorm.getOmhullende().getMaximumX() > MAX_X || vorm.getOmhullende().getMinimumX() < MIN_X || vorm.getOmhullende().getMaximumY() > MAX_Y || vorm.getOmhullende().getMinimumY() < MIN_Y){
             throw new DomainException("Foute vorm grootte");
@@ -57,10 +61,7 @@ public class Tekening implements Drawable{
                 return false;
             }
         }
-        if(this.vormen.size() == tekening.vormen.size()){
-            return true;
-        }
-        return false;
+        return this.vormen.size() == tekening.vormen.size();
     }
 
     public Vorm getVorm(int i){

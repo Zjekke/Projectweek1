@@ -12,7 +12,7 @@ public class FxTekenHangManApp extends Application {
     private Button maakVolgendeZichtbaarKnop = new Button("maak volgende zichtbaar");
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         Pane root = new Pane();
         Scene scene = new Scene(root,400,400);
         TekeningHangMan tekening = new TekeningHangMan();

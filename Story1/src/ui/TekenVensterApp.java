@@ -1,7 +1,7 @@
 package ui;
 
 import javafx.scene.layout.GridPane;
-import domain.*;
+import domain.Tekening;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.*;
 import javafx.scene.paint.*;
@@ -25,4 +25,3 @@ public class TekenVensterApp {
         }
     }
 }
-

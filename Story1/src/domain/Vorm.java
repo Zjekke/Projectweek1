@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public abstract class Vorm implements Drawable {
     private Color kleur;
+    private boolean zichtbaar;
 
     public Color getKleur() {
         return kleur;
@@ -19,6 +20,20 @@ public abstract class Vorm implements Drawable {
     public String toString(){
         return "(" + this.kleur + ")";
     }
+
+    public Vorm() {
+        this.zichtbaar = true;
+    }
+
+    public void setZichtbaar(boolean zichtbaar) {
+        this.zichtbaar = zichtbaar;
+    }
+
+    public boolean isZichtbaar() {
+        return this.zichtbaar;
+    }
+
+
 
 
 
