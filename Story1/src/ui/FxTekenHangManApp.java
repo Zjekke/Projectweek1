@@ -1,4 +1,5 @@
 
+
 package ui;
 
 import javafx.application.Application;
@@ -12,10 +13,10 @@ public class FxTekenHangManApp extends Application {
     private Button maakVolgendeZichtbaarKnop = new Button("maak volgende zichtbaar");
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         Pane root = new Pane();
         Scene scene = new Scene(root,400,400);
-        TekeningHangMan tekening = new TekeningHangMan("tekening");
+        TekeningHangMan tekening = new TekeningHangMan();
         primaryStage.setScene(scene);
         root.getChildren().add(maakVolgendeZichtbaarKnop);
 

@@ -1,6 +1,10 @@
 package domain;
 
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Polyline;
+import javafx.scene.paint.Color;
+
+import java.awt.*;
 
 public class Driehoek extends Vorm {
     private Punt punt1, punt2, punt3;
@@ -55,6 +59,20 @@ public class Driehoek extends Vorm {
 
     @Override
     public void teken(Pane root) {
+
+        int[] hoekInts = {this.getHoekPunt1().getX(), this.getHoekPunt1().getY(), this.getHoekPunt2().getX(), this.getHoekPunt2().getY(), this.getHoekPunt3().getX(), this.getHoekPunt3().getY()};
+
+        double[] hoekDoubles = new double[hoekInts.length];
+
+        for(int i=0; i<hoekInts.length; i++) {
+            hoekDoubles[i] = hoekInts[i];
+        }
+
+        Polyline driehoek = new Polyline(hoekDoubles);
+        driehoek.setFill(this.getKleur());
+        driehoek.setStroke(Color.BLACK);
+
+        root.getChildren().add(driehoek);
 
     }
 }

@@ -2,12 +2,14 @@ package domain;
 
 public class TekeningHangMan extends Tekening {
 
-    private Tekening lijst;
+    private int aantalOnzichtbaar;
 
-    public TekeningHangMan(String naam) throws Exception{
-        super(naam);
-        lijst = new Tekening("Hangman");
+    public TekeningHangMan() {
+        super("HangMan");
+
         afbeeldingHangMan();
+
+        this.aantalOnzichtbaar = this.getAantalVormen() - 4;
     }
 
     public void afbeeldingHangMan() throws DomainException{
@@ -30,40 +32,31 @@ public class TekeningHangMan extends Tekening {
         Vorm handLinks = new Cirkel(new Punt(230, 170), 5);
         Vorm handRechts = new Cirkel(new Punt(330, 170), 5);
 
-        lijst.voegToe(galgBodem);
-        lijst.voegToe(galgStaaf);
-        lijst.voegToe(hangbar);
-        lijst.voegToe(koord);
-        lijst.voegToe(hoofd);
-        lijst.voegToe(oogLinks);
-        lijst.voegToe(oogRechts);
-        lijst.voegToe(neus);
-        lijst.voegToe(mond);
-        lijst.voegToe(lijf);
-        lijst.voegToe(beenLinks);
-        lijst.voegToe(beenRechts);
-        lijst.voegToe(voetLinks);
-        lijst.voegToe(voetRechts);
-        lijst.voegToe(armLinks);
-        lijst.voegToe(armRechts);
-        lijst.voegToe(handLinks);
-        lijst.voegToe(handRechts);
+        this.voegToe(galgBodem);
+        this.voegToe(galgStaaf);
+        this.voegToe(hangbar);
+        this.voegToe(koord);
+        this.voegToe(hoofd);
+        this.voegToe(oogLinks);
+        this.voegToe(oogRechts);
+        this.voegToe(neus);
+        this.voegToe(mond);
+        this.voegToe(lijf);
+        this.voegToe(beenLinks);
+        this.voegToe(beenRechts);
+        this.voegToe(voetLinks);
+        this.voegToe(voetRechts);
+        this.voegToe(armLinks);
+        this.voegToe(armRechts);
+        this.voegToe(handLinks);
+        this.voegToe(handRechts);
 
-        reset();
     }
 
-    public void reset(){
-        for(int i = 4;i< lijst.getAantalVormen();i++){
-            lijst.getVormen().get(i).setZichtbaar(false);
-        }
-    }
+
 
     public int getAantalOnzichtbaar(){
-        int i = 0;
-        for(Vorm v : this.getLijst().getVormen()){
-            if(!v.isZichtbaar()){i++;}
-        }
-        return i;
+        return this.aantalOnzichtbaar;
     }
 
     public void zetVolgendeZichtbaar() throws DomainException{
@@ -77,18 +70,17 @@ public class TekeningHangMan extends Tekening {
     }
 
     public Tekening getLijst() {
-        return lijst;
+        return this;
     }
 
     public void voegToe(Vorm vorm) throws DomainException{
-        if(vorm == null){throw new DomainException("Geen geldige vorm!");}
-        lijst.voegToe(vorm);
+        super.voegToe(vorm);
     }
 
     public void verwijder(Vorm vorm)throws DomainException{
-        if(!lijst.getVormen().contains(vorm)){throw new DomainException("Vorm zit er niet in!");}
+        if(!this.getVormen().contains(vorm)){throw new DomainException("Vorm zit er niet in!");}
         if(vorm == null){throw new DomainException("Geen geldige vorm!");}
-        lijst.verwijder(vorm);
+        this.verwijder(vorm);
     }
 
 }

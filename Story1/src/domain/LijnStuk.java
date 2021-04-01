@@ -1,8 +1,9 @@
 package domain;
 
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
 
-public class LijnStuk extends Vorm {
+public class LijnStuk extends Vorm implements Drawable{
     private Punt startPunt;
     private Punt eindPunt;
 
@@ -31,10 +32,7 @@ public class LijnStuk extends Vorm {
         if(lijn == null){
             return false;
         }
-        if(lijn.startPunt.equals(this.startPunt) && lijn.eindPunt.equals((this.eindPunt))){
-            return true;
-        }
-        return false;
+        return lijn.startPunt.equals(this.startPunt) && lijn.eindPunt.equals((this.eindPunt));
     }
 
     @Override
@@ -56,6 +54,11 @@ public class LijnStuk extends Vorm {
 
     @Override
     public void teken(Pane root) {
+
+        Line lijn = new Line(this.getStartPunt().getX(), this.getStartPunt().getY(), this.getEindPunt().getX(), this.getEindPunt().getY());
+        lijn.setFill(this.getKleur());
+        lijn.setStrokeWidth(5);
+        root.getChildren().add(lijn);
 
     }
 }

@@ -1,8 +1,10 @@
 package domain;
 
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
-public class Rechthoek extends Vorm {
+public class Rechthoek extends Vorm implements Drawable {
     private int hoogte;
     private int breedte;
     private Punt linkerBovenhoek;
@@ -63,6 +65,10 @@ public class Rechthoek extends Vorm {
 
     @Override
     public void teken(Pane root) {
+
+        Rectangle rechthoek = new Rectangle(this.getLinkerBovenhoek().getX(), this.getLinkerBovenhoek().getY(), this.getBreedte(), this.getHoogte());
+        rechthoek.setFill(this.getKleur());
+        root.getChildren().add(rechthoek);
 
     }
 }

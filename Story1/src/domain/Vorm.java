@@ -1,14 +1,13 @@
 package domain;
-
+import javafx.scene.paint.Color;
 import java.awt.*;
-import java.util.ArrayList;
 
 public abstract class Vorm implements Drawable {
     private Color kleur;
     private boolean zichtbaar;
 
     public Color getKleur() {
-        return kleur;
+        return this.kleur;
     }
 
     public void setKleur(Color kleur) {

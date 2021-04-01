@@ -2,10 +2,12 @@ package domain;
 
 import domain.Punt;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 import java.awt.*;
 
-public class Cirkel extends Vorm {
+public class Cirkel extends Vorm implements Drawable{
 
 
     private Punt middelPunt;
@@ -61,6 +63,9 @@ public class Cirkel extends Vorm {
 
     @Override
     public void teken(Pane root) {
-
+        Circle cirkel = new Circle(this.getMiddelPunt().getX(), this.getMiddelPunt().getY(), this.getStraal());
+        cirkel.setFill(Color.BLUE);
+        cirkel.setStroke(Color.BLUE);
+        root.getChildren().add(cirkel);
     }
 }
