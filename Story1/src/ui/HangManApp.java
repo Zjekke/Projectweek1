@@ -2,6 +2,7 @@ package ui;
 
 import domain.HangMan;
 import domain.Speler;
+import domain.Vorm;
 import domain.WoordenLijst;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -23,6 +24,7 @@ public class HangManApp {
     private TekenVensterApp tekening;
     private Pane pane = new Pane();
     private int aantal = 0;
+    private int teller;
 
 
     public HangManApp(VBox root, Speler speler, WoordenLijst woordenlijst) {
@@ -42,6 +44,14 @@ public class HangManApp {
 
         raadButton.setOnAction(eventRaad ->{
             aantal++;
+            // Scuffed teller
+            teller = 0;
+            for(Vorm vorm : hangman.getTekening().getVormen()){
+                if(!vorm.isZichtbaar()){
+                    teller++;
+                }
+            }
+            // Scuffed teller
             if (hangman.isGewonnen()) {
                 raadButton.setDisable(true);
                 hbox.getChildren().clear();
@@ -49,7 +59,7 @@ public class HangManApp {
                 hintwoordUitvoer.setText("Goed gedaan " + speler.getNaam() + " je hebt het woord geraden in " + aantal + " stappen!!");
                 hbox.getChildren().add(hintwoordUitvoer);
             }
-            else if (hangman.isGameOver()){
+            else if (teller == 0 /*hangman.isGameOver()*/){
                 raadButton.setDisable(true);
                 hbox.getChildren().clear();
                 invoerBox.getChildren().clear();
